@@ -1,0 +1,45 @@
+@mixin mq($condition) {
+  @if $condition == 'mobilemin' {
+    @media screen and (min-width: $screen-mobile) {
+      @content;
+    }
+  }
+  @if $condition == 'mobilemax' {
+    @media screen and (max-width: $screen-mobile) {
+      @content;
+    }
+  }
+  @if $condition == 'tabletmin' {
+    @media screen and (min-width: $screen-tablet) {
+      @content;
+    }
+  }
+  @if $condition == 'tabletmax' {
+    @media screen and (max-width: $screen-tablet) {
+      @content;
+    }
+  }
+  @if $condition == 'desktopmin' {
+    @media screen and (min-width: $screen-desktop) {
+      @content;
+    }
+  }
+  @if $condition == 'desktopmax' {
+    @media screen and (max-width: $screen-desktop) {
+      @content;
+    }
+  }
+}
+
+@mixin cf() {
+  zoom: 1;
+  &:before {
+    content: '';
+    display: table;
+  }
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}

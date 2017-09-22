@@ -1,0 +1,24 @@
+$color-brand-primary: #42B549;
+$color-brand-secondary: #FF5722;
+$color-background: #F8F8F8;
+$color-foreground-title: rgba(0,0,0,0.54);
+$color-foreground-body: rgba(0, 0, 0, 0.7);
+$color-light-green: #F3FEF3;
+$color-input-error: #D50000;
+$color-toaster-error: #FF3B30;
+$color-notification: #EA212D;
+$color-wishlist: #F33960;
+$color-star: #FFC107;
+
+$font-primary: 'Roboto', Arial, sans-serif;
+$font-secondary: 'Open Sans', Verdana, sans-serif;
+$font-scale: 1.414;
+$font-size-base: 16px;
+$font-size-bigger: $font-size-base * $font-scale;
+$font-size-smaller: $font-size-base / $font-scale;
+
+$column-padding: ($font-size-base * $font-scale) / 2;
+
+$screen-mobile: 320px;
+$screen-tablet: 600px;
+$screen-desktop: 1280px;
