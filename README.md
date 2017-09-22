@@ -1,2 +1,2 @@
-# fe-intermediate-sass
-Learning SASS
+# belajarfrontend
+Pemanasan dahulu sebelum sprint.
