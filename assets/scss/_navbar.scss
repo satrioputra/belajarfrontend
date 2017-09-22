@@ -1,7 +1,7 @@
 .site-nav-top {
   position: absolute;
   left: 0; top: -6px;
-  width: 80%;
+  min-width: 320px;
   height: 100vh;
   background-color: #fff;
   transform: translateX(-100%);
@@ -60,10 +60,11 @@
   display: block;
   overflow: hidden;
   border-bottom: 1px solid $color-background;
-  @include mq(tabletmin) {
+  @include mq(desktopmin) {
     display: inline-block;
     position: relative;
     border-bottom: none;
+    overflow: visible;
   }
   & > a {
     color: $color-foreground-body;
@@ -73,8 +74,6 @@
       display: inline-block;
       color: #fff;
       letter-spacing: 1px;
-      margin-top: 1em;
-      padding: 4px 12px;
       &:hover {
         color: #efefef;
       }
@@ -88,12 +87,11 @@
   transform-origin: top;
   transition: all 0.2s ease-out;
   @include mq(desktopmin) {
-    margin-top: -4px;
+    margin-top: -30px;
     padding-top: 22px;
     position: absolute;
     right: 0;
     min-width: 260px;
-    z-index: 800;
     display: none;
     transform: scaleY(1);
     height: auto;
@@ -121,6 +119,7 @@
     color: #555;
     font-weight: normal;
     padding: 16px;
+    text-align: left;
     transition: color 0.2s ease-out;
   }
   & a:hover {
@@ -133,17 +132,17 @@
   }
 }
 
-// .menu-item-has-children:hover .menu-item-child {
-//   display: block;
-// }
+.menu-item-has-children:hover .menu-item-child {
+  display: block;
+}
 
 .menu-item-child-list {
   width: 100%;
-  @include mq(desktop) {
+  border-right: 1px solid #dedede;
+  @include mq(desktopmin) {
     width: 160px;
     float: left;
   }
-  border-right: 1px solid #dedede;
   & li {
     position: relative;
   }
@@ -161,7 +160,7 @@
 
 .menu-item-child-content {
   display: none;
-  @include mq(desktop) {
+  @include mq(desktopmin) {
     display: block;
     background-color: #fcfcfc;
     padding: 4px;
@@ -194,6 +193,7 @@ a.main-nav {
     height: 28px;
     width: 28px;
     margin-left: 12px;
+    margin-top: -6px;
     vertical-align: middle;
   }
   &:hover ~ .main-nav-child {
@@ -205,7 +205,7 @@ a.main-nav {
   position: absolute;
   right: 0;
   min-width: 240px;
-  margin-top: -12px;
+  margin-top: -22px;
   padding-top: 24px;
   text-align: center;
   zoom: 1;

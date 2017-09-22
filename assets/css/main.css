@@ -112,7 +112,7 @@ a {
   margin-right: auto;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 1280px) {
   .site-logo {
     margin-left: 0;
     display: inline-block;
@@ -123,7 +123,7 @@ a {
   position: absolute;
   left: 0;
   top: -6px;
-  width: 80%;
+  min-width: 320px;
   height: 100vh;
   background-color: #fff;
   transform: translateX(-100%);
@@ -196,11 +196,12 @@ a {
   border-bottom: 1px solid #F8F8F8;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 1280px) {
   .menu-item-has-children {
     display: inline-block;
     position: relative;
     border-bottom: none;
+    overflow: visible;
   }
 }
 
@@ -215,8 +216,6 @@ a {
     display: inline-block;
     color: #fff;
     letter-spacing: 1px;
-    margin-top: 1em;
-    padding: 4px 12px;
   }
   .menu-item-has-children > a:hover {
     color: #efefef;
@@ -232,12 +231,11 @@ a {
 
 @media screen and (min-width: 1280px) {
   .menu-item-child {
-    margin-top: -4px;
+    margin-top: -30px;
     padding-top: 22px;
     position: absolute;
     right: 0;
     min-width: 260px;
-    z-index: 800;
     display: none;
     transform: scaleY(1);
     height: auto;
@@ -270,6 +268,7 @@ a {
   color: #555;
   font-weight: normal;
   padding: 16px;
+  text-align: left;
   transition: color 0.2s ease-out;
 }
 
@@ -283,9 +282,20 @@ a {
   height: 100%;
 }
 
+.menu-item-has-children:hover .menu-item-child {
+  display: block;
+}
+
 .menu-item-child-list {
   width: 100%;
   border-right: 1px solid #dedede;
+}
+
+@media screen and (min-width: 1280px) {
+  .menu-item-child-list {
+    width: 160px;
+    float: left;
+  }
 }
 
 .menu-item-child-list li {
@@ -305,6 +315,15 @@ a {
 
 .menu-item-child-content {
   display: none;
+}
+
+@media screen and (min-width: 1280px) {
+  .menu-item-child-content {
+    display: block;
+    background-color: #fcfcfc;
+    padding: 4px;
+    width: 400px;
+  }
 }
 
 .item-link {
@@ -336,6 +355,7 @@ a.main-nav {
     height: 28px;
     width: 28px;
     margin-left: 12px;
+    margin-top: -6px;
     vertical-align: middle;
   }
 }
@@ -348,7 +368,7 @@ a.main-nav:hover ~ .main-nav-child {
   position: absolute;
   right: 0;
   min-width: 240px;
-  margin-top: -12px;
+  margin-top: -22px;
   padding-top: 24px;
   text-align: center;
   zoom: 1;
