@@ -1,0 +1,25 @@
+.site-header {
+  background-color: $color-brand-primary;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 700;
+  @include cf();
+}
+
+.site-logo {
+  background: url('https://ecs7.tokopedia.net/assets/images/tokopedia-logo.png') no-repeat left center;
+  background-size: contain;
+  margin-top: 6px;
+  margin-bottom: 6px;  
+  height: 32px;
+  width: 140px;
+  margin-left: auto;
+  margin-right: auto;
+  @include mq(tabletmin) {
+    margin-left: 0;
+    display: inline-block;
+  }
+}
