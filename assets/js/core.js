@@ -1,39 +1,40 @@
 var 
-d = document;
+d = document,
 w = window;
 
 function showOverlay() {
   var
-    overlay = $('.overlay'),
-    menuItem = $('.menu-item-has-children'),
-    menuItemChild = $('.menu-item-child'),
-    mq = w.matchMedia('min-width: 600px');
-
-  if(matchMedia) {
+    overlay = d.querySelector('.overlay'),
+    menuItem = d.querySelectorAll('.menu-item-has-children');
+    
+  if (matchMedia) {
+    var mq = w.matchMedia('min-width: 1200px');
     mq.addListener(WidthChange);
     WidthChange(mq);
   }
 
   function WidthChange(mq) {
-    if (mq.matches) {
-      menuItem.hover(
-        function () {
-          overlay.addClass('active');
-        },
-        function () {
-          overlay.removeClass('active');
-        }
-      )
+    if(mq.matches) {
+      var menuItems = Array.prototype.slice.call(menuItem);
+      menuItems.map(function(i) {
+        i.addEventListener('mouseenter', function(){
+          overlay.classList.add('active');
+        })
+        i.addEventListener('mouseleave', function() {
+          overlay.classList.remove('active');
+        })
+      })
     }
   }
 }
 showOverlay();
 
 function retrieveImage() {
-  var specialLinks = d.querySelectorAll('.menu-item-child-list a');
-  var itemLink = d.querySelectorAll(".item-link");
-  var itemImage = d.getElementsByClassName('item-image');
-  var maxLength = itemLink.length;
+  var 
+    specialLinks = d.querySelectorAll('.menu-item-child-list a'),
+    itemLink = d.querySelectorAll(".item-link"),
+    itemImage = d.getElementsByClassName('item-image'),
+    maxLength = itemLink.length;
 
   for (var x = 0; x < specialLinks.length; x++) {
     specialLinks[x].addEventListener("mouseover", retrieve, true);
