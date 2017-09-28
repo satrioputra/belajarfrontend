@@ -1,11 +1,9 @@
-var 
-d = document,
-w = window;
+var d = document;
+var w = window;
 
 function showOverlay() {
-  var
-    overlay = d.querySelector('.overlay'),
-    menuItem = d.querySelectorAll('.menu-item-has-children');
+  var overlay = d.querySelector('.overlay');
+  var menuItem = d.querySelectorAll('.menu-item-has-children');
     
   if (matchMedia) {
     var mq = w.matchMedia('min-width: 1200px');
@@ -19,34 +17,34 @@ function showOverlay() {
       menuItems.map(function(i) {
         i.addEventListener('mouseenter', function(){
           overlay.classList.add('active');
-        })
+        });
         i.addEventListener('mouseleave', function() {
           overlay.classList.remove('active');
-        })
-      })
+        });
+      });
     }
   }
 }
 showOverlay();
 
 function retrieveImage() {
-  var 
-    specialLinks = d.querySelectorAll('.menu-item-child-list a'),
-    itemLink = d.querySelectorAll(".item-link"),
-    itemImage = d.getElementsByClassName('item-image'),
-    maxLength = itemLink.length;
+  var specialLinks, itemLink, itemImage, maxLength;
+  specialLinks = d.querySelectorAll('.menu-item-child-list a');
+  itemLink = d.querySelectorAll(".item-link");
+  itemImage = d.getElementsByClassName('item-image');
+  maxLength = itemLink.length;
 
   for (var x = 0; x < specialLinks.length; x++) {
     specialLinks[x].addEventListener("mouseover", retrieve, true);
-
-    function retrieve(e) {
-      for (var i = 0; i < maxLength; i++) {
-        itemLink[i].setAttribute('href', e.target.getAttribute("data-url-" + i));
-        itemImage[i].setAttribute('src', e.target.getAttribute("data-img-" + i));
-      };
-    };
-  };
-};
+  }
+  
+  function retrieve(e) {
+    for (var i = 0; i < maxLength; i++) {
+      itemLink[i].setAttribute('href', e.target.getAttribute("data-url-" + i));
+      itemImage[i].setAttribute('src', e.target.getAttribute("data-img-" + i));
+    }
+  }
+}
 retrieveImage();
 
 function toggleMenu() {
@@ -59,7 +57,7 @@ function toggleMenu() {
     menu.classList.toggle('open');
     overlay.classList.toggle('active');
   });
-};
+}
 toggleMenu();
 
 function mobileDropdown() {
@@ -85,6 +83,6 @@ function closeMenu() {
   button.addEventListener('click', function () {
     menu.classList.remove('open');
     overlay.classList.toggle('active');
-  })
+  });
 }
 closeMenu();

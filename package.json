@@ -1,0 +1,35 @@
+{
+  "name": "belajarfrontend",
+  "version": "1.0.0",
+  "description": "Pemanasan dahulu",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/satrioputra/belajarfrontend.git"
+  },
+  "author": "Satrio Yamanda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/satrioputra/belajarfrontend/issues"
+  },
+  "homepage": "https://github.com/satrioputra/belajarfrontend#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-newer": "^1.3.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-size": "^2.1.0",
+    "gulp-uglify": "^3.0.0",
+    "jshint": "^2.9.5",
+    "yargs": "^9.0.1"
+  }
+}
