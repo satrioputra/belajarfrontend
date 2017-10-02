@@ -58,9 +58,7 @@ gulp.task('style', function () {
     .pipe(autoprefixer())
     // .pipe(gulpif(compressFlag, cssnano()))
     .pipe(gulp.dest(path.dest.style))
-    .pipe(browserSync.reload({
-      stream: true
-    }));
+    .pipe(browserSync.stream());
 });
 
 gulp.task('script', function () {
@@ -77,15 +75,18 @@ gulp.task('image', function () {
     .pipe(gulp.dest(path.dest.image));
 });
 
-gulp.task('serve', function () {
+gulp.task('serve', ['style'], function () {
   browserSync.init({
     server: {
       baseDir: './'
     }
   });
+  gulp.watch(path.src.style, ['style']);
+  gulp.watch('./*.html').on('change', browserSync.reload);
 });
 
-gulp.task('watch-assets', function () {
+gulp.task('watch-assets', ['serve'], function () {
   gulp.watch(path.src.style, sass({outputStyle: 'compact'}));
-  gulp.watch(path.dest.base).on('change', browserSync.reload);
+  gulp.watch(path.src.style).on('change', browserSync.reload);
+  gulp.watch('./*.html').on('change', browserSync.reload);
 });
